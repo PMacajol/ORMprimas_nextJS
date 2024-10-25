@@ -8,7 +8,7 @@ export default function Home() {
   // Funciones de navegación
   const goToCreateProduct = () => router.push("/nuevoProducto");
   const goToSearchProduct = () => router.push("/productos");
-  const goToUpdateProduct = () => router.push("/actualizaProducto");
+  const goToUpdateProduct = () => router.push("/actualizarProducto/A001");
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-blue-100">
