@@ -1,21 +1,100 @@
+/* globals.css */
+
+/* Configuración base de Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Definición de variables CSS */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f0f4f8; /* Color celeste suave para el fondo */
+  --text-color: #2d3748; /* Color de texto más neutro y oscuro */
+  --button-bg: #007bff; /* Color azul moderno para los botones */
+  --button-text-color: #ffffff; /* Letras blancas */
+  --button-hover-bg: #0056b3; /* Hover más oscuro para los botones */
+  --input-border: #cbd5e0; /* Borde gris suave para los inputs */
+  --input-focus-border: #3182ce; /* Borde azul al hacer foco en los inputs */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Estilos para el body */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif; /* Tipografía más moderna */
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilos globales para los botones */
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text-color);
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más definida */
+  cursor: pointer;
+  text-align: center;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+button:disabled {
+  background-color: var(--button-bg);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Estilos para inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-size: 16px;
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--input-focus-border); /* Resalta en azul al hacer foco */
+}
+
+/* Contenedor principal del formulario */
+.form-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+/* Estilo del título */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* Mensajes de error */
+.form-error {
+  color: #e53e3e;
+  background-color: #fff5f5;
+  border: 1px solid #feb2b2;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
 }
